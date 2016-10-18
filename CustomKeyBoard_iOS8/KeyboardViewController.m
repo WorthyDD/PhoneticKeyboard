@@ -44,7 +44,7 @@
     self.keyBoard = [[[NSBundle mainBundle] loadNibNamed:@"CustomKeyBoard" owner:nil options:nil] firstObject];
     self.inputView = self.keyBoard;
     self.keyBoard.delegate = self;
-    [self.keyBoard.keyButtons[52] addTarget:self action:@selector(handleInputModeListFromView:withEvent:) forControlEvents:UIControlEventAllTouchEvents];
+    [self.keyBoard.keyButtons[53] addTarget:self action:@selector(handleInputModeListFromView:withEvent:) forControlEvents:UIControlEventAllTouchEvents];
 //    [self addActionToKeyBoard];
    
 }
@@ -77,7 +77,7 @@
         //键盘消失
         [self dismissKeyboard];
     }
-    else if(tag == 52){
+    else if(tag == 53){
         //切换键盘
         
     }

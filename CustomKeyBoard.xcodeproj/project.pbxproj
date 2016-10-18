@@ -485,7 +485,7 @@
 				DEVELOPMENT_TEAM = 99BGKUDWHK;
 				INFOPLIST_FILE = CustomKeyBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -497,7 +497,7 @@
 				DEVELOPMENT_TEAM = 99BGKUDWHK;
 				INFOPLIST_FILE = CustomKeyBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -548,7 +548,7 @@
 				);
 				INFOPLIST_FILE = CustomKeyBoard_iOS8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard5.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard1.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -560,7 +560,7 @@
 				DEVELOPMENT_TEAM = 99BGKUDWHK;
 				INFOPLIST_FILE = CustomKeyBoard_iOS8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard5.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard1.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

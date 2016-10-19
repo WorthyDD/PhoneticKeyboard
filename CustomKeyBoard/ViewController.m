@@ -25,5 +25,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)tapSetting:(id)sender {
+    
+    NSURL *url = [NSURL URLWithString:@"prefs:root=General&path=Keyboard"];
+    if([[UIApplication sharedApplication] canOpenURL:url]){
+        [[UIApplication sharedApplication] openURL:url];
+    }
+    else{
+        NSLog(@"open fail");
+    }
+}
 
 @end

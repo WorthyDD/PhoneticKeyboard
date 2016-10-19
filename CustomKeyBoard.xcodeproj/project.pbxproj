@@ -21,6 +21,7 @@
 		84BAE36919C8929300DCF15C /* CustomKeyBoard_iOS8.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84BAE36019C8929300DCF15C /* CustomKeyBoard_iOS8.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		84E9440319C89A0D00096A76 /* CustomKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9440219C89A0D00096A76 /* CustomKeyBoard.m */; };
 		84E9440519C89BDA00096A76 /* CustomKeyBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E9440419C89BDA00096A76 /* CustomKeyBoard.xib */; };
+		CC55C47C1DB73C3600C7677B /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = CC55C47B1DB73C3600C7677B /* UIView+Toast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		84E9440119C89A0D00096A76 /* CustomKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomKeyBoard.h; sourceTree = "<group>"; };
 		84E9440219C89A0D00096A76 /* CustomKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomKeyBoard.m; sourceTree = "<group>"; };
 		84E9440419C89BDA00096A76 /* CustomKeyBoard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomKeyBoard.xib; sourceTree = "<group>"; };
+		CC55C47A1DB73C3600C7677B /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		CC55C47B1DB73C3600C7677B /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,8 @@
 		84BAE36119C8929300DCF15C /* CustomKeyBoard_iOS8 */ = {
 			isa = PBXGroup;
 			children = (
+				CC55C47A1DB73C3600C7677B /* UIView+Toast.h */,
+				CC55C47B1DB73C3600C7677B /* UIView+Toast.m */,
 				84BAE36419C8929300DCF15C /* KeyboardViewController.h */,
 				84BAE36519C8929300DCF15C /* KeyboardViewController.m */,
 				84BAE36219C8929300DCF15C /* Supporting Files */,
@@ -357,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC55C47C1DB73C3600C7677B /* UIView+Toast.m in Sources */,
 				84BAE36619C8929300DCF15C /* KeyboardViewController.m in Sources */,
 				84E9440319C89A0D00096A76 /* CustomKeyBoard.m in Sources */,
 			);
@@ -485,7 +491,7 @@
 				DEVELOPMENT_TEAM = 99BGKUDWHK;
 				INFOPLIST_FILE = CustomKeyBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -497,7 +503,7 @@
 				DEVELOPMENT_TEAM = 99BGKUDWHK;
 				INFOPLIST_FILE = CustomKeyBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -548,7 +554,7 @@
 				);
 				INFOPLIST_FILE = CustomKeyBoard_iOS8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard1.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard3.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -560,7 +566,7 @@
 				DEVELOPMENT_TEAM = 99BGKUDWHK;
 				INFOPLIST_FILE = CustomKeyBoard_iOS8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard1.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TA.Test.CustomKeyBoard3.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

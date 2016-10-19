@@ -18,6 +18,7 @@
 
 #import "KeyboardViewController.h"
 #import "CustomKeyBoard.h"
+#import "UIView+Toast.h"
 
 @interface KeyboardViewController ()<keyBoardDelelagte>
 @property (strong, nonatomic) CustomKeyBoard *keyBoard;
@@ -44,7 +45,7 @@
     self.keyBoard = [[[NSBundle mainBundle] loadNibNamed:@"CustomKeyBoard" owner:nil options:nil] firstObject];
     self.inputView = self.keyBoard;
     self.keyBoard.delegate = self;
-    [self.keyBoard.keyButtons[53] addTarget:self action:@selector(handleInputModeListFromView:withEvent:) forControlEvents:UIControlEventAllTouchEvents];
+    [self.keyBoard.keyButtons[54] addTarget:self action:@selector(handleInputModeListFromView:withEvent:) forControlEvents:UIControlEventAllTouchEvents];
 //    [self addActionToKeyBoard];
    
 }
@@ -75,9 +76,14 @@
     }
     else if(tag == 19){
         //键盘消失
-        [self dismissKeyboard];
+        [self.textDocumentProxy insertText:@"\n"];
+//        [self dismissKeyboard];
     }
     else if(tag == 53){
+        //英语之音
+        [self.view makeToast:@"公益音标全课程, 喜马拉雅<<英语之音>>"];
+    }
+    else if(tag == 54){
         //切换键盘
         
     }

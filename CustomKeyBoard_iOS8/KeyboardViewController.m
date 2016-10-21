@@ -8,12 +8,11 @@
 
 /*
  
- _titles = @[@"p", @"t", @"k", @"f", @"θ", @"s", @"ts", @"ʃ", @"tf", @"删除",
-             @"b", @"d", @"g", @"v", @"ð", @"z", @"dz", @"ʒ", @"dʒ", @"回车",
-             @"m", @"n", @"ŋ", @"l", @"w", @"j", @"h", @"r", @"tr", @"dr", @",",
-             @"ɑ:", @"ɔ:", @"u:", @"i:", @"ə:", @"æ", @"ɑi", @"ei", @"ɑu", @"əu", @".",
-             @"ʌ", @"ɔ", @"u", @"i", @"ə", @"e", @"iə", @"uə", @"eə", @"ɔi", @"'",
-             @"键盘切换", @" ", @"[", @"]"];
+ _titles = @[@"æ", @"e", @"w", @"ə", @"r", @"t", @"ʃ", @"u", @"Delete",
+            @"i", @"ɔ", @"p", @"ʌ", @"ɑ", @"s", @"d", @"[", @"]",
+            @"f", @"g", @"h", @"j", @"k", @"l", @"ʒ", @":", @"'",
+            @"z", @"θ", @"ð", @"v", @"b", @"n", @"m", @"ŋ", @",",
+            @"英语之音", @"🌐", @" ", @".", @"Enter"];
  */
 
 #import "KeyboardViewController.h"
@@ -23,6 +22,8 @@
 @interface KeyboardViewController ()<keyBoardDelelagte>
 @property (strong, nonatomic) CustomKeyBoard *keyBoard;
 
+@property (nonatomic, assign) BOOL isDeletePress;
+@property (nonatomic) NSTimer *timer;
 @end
 
 @implementation KeyboardViewController
@@ -45,7 +46,13 @@
     self.keyBoard = [[[NSBundle mainBundle] loadNibNamed:@"CustomKeyBoard" owner:nil options:nil] firstObject];
     self.inputView = self.keyBoard;
     self.keyBoard.delegate = self;
-    [self.keyBoard.keyButtons[54] addTarget:self action:@selector(handleInputModeListFromView:withEvent:) forControlEvents:UIControlEventAllTouchEvents];
+    [self.keyBoard.keyButtons[38] addTarget:self action:@selector(handleInputModeListFromView:withEvent:) forControlEvents:UIControlEventAllTouchEvents];
+    [self.keyBoard.keyButtons[36] addTarget:self action:@selector(deleteButtonPress:) forControlEvents:UIControlEventTouchDown];
+    [self.keyBoard.keyButtons[36] addTarget:self action:@selector(deleteButtonUpPress:) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside|UIControlEventTouchDragOutside|UIControlEventTouchDragInside];
+    
+    CGFloat _expandedHeight = 230;
+    NSLayoutConstraint *_heightConstraint =      [NSLayoutConstraint constraintWithItem: self.view      attribute: NSLayoutAttributeHeight      relatedBy: NSLayoutRelationEqual      toItem: nil      attribute: NSLayoutAttributeNotAnAttribute      multiplier: 0.0      constant: _expandedHeight];
+    _heightConstraint.active = YES;
 //    [self addActionToKeyBoard];
    
 }
@@ -71,19 +78,19 @@
 
 - (void)didTapKeyTag:(NSInteger)tag text:(NSString *)text
 {
-    if(tag == 9){
-        [self.textDocumentProxy deleteBackward];
+    if(tag == 36){
+        //[self.textDocumentProxy deleteBackward];
     }
-    else if(tag == 19){
+    else if(tag == 40){
         //键盘消失
         [self.textDocumentProxy insertText:@"\n"];
 //        [self dismissKeyboard];
     }
-    else if(tag == 53){
+    else if(tag == 37){
         //英语之音
         [self.view makeToast:@"公益音标全课程, 喜马拉雅<<英语之音>>"];
     }
-    else if(tag == 54){
+    else if(tag == 38){
         //切换键盘
         
     }
@@ -92,6 +99,31 @@
     }
 }
 
+
+- (void) deleteButtonPress : (id)sender
+{
+    NSLog(@"in");
+//    UIButton *b = (UIButton *)sender;
+//    [b setTitle:@"按下" forState:UIControlStateNormal];
+    [self.textDocumentProxy deleteBackward];
+    if(!_timer){
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            [self.textDocumentProxy deleteBackward];
+        }];
+    }
+
+}
+
+- (void) deleteButtonUpPress : (id)sender
+{
+    NSLog(@"out");
+//    UIButton *b = (UIButton *)sender;
+//    [b setTitle:@"松开" forState:UIControlStateNormal];
+    _isDeletePress = NO;
+    [_timer invalidate];
+    _timer = nil;
+    
+}
 
 -(void)clearButtonTapped{
     [self.textDocumentProxy deleteBackward];
